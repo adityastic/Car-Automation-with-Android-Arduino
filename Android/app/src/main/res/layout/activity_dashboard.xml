@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.adityagupta.arduinobluetooth.AppBarLayoutBehavior">
+
+        <com.adityagupta.arduinobluetooth.SansFontCollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            app:collapsedTitleTextAppearance="@style/CollapsedTitleAppearance"
+            app:expandedTitleGravity="top"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleMarginTop="48dp"
+            app:expandedTitleTextAppearance="@style/ExpandedTitleAppearance"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar48"
+                app:layout_collapseMode="pin"
+                app:title="Car Automation" />
+
+        </com.adityagupta.arduinobluetooth.SansFontCollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            tools:context=".Dashboard">
+
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/drive"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_3"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/driveTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:text="Drive"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/selfdrive"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_2"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/selfDriveTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:text="Self Drive"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/obstacle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/obstacleSwitch"
+                    android:background="@drawable/gradient_5"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/obstacleTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/obstacleSwitch"
+                            android:padding="12.0dip"
+                            android:text="Obstacle Avoidance"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#fff" />
+
+
+                        <Switch
+                            android:id="@+id/obstacleSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:theme="@style/Switch_Custom" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/voicecontrol"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_4"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/voiceTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:text="Voice Control"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/motioncontrol"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                android:visibility="gone"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_8"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/motionTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/motionEdit"
+                            android:padding="12.0dip"
+                            android:text="Motion Control"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#fff" />
+
+
+                        <EditText
+                            android:id="@+id/motionEdit"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="150"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/selfLearning"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_9"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/selfLearningTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:text="Self Learning"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:cardCornerRadius="12.0dip"
+                app:cardElevation="8.0dip"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_8"
+                    android:orientation="vertical"
+                    android:padding="16.0dip">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12.0dip"
+                            android:text="Motion Control"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#fff" />
+
+
+                        <EditText
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="150"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

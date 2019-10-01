@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">@color/primary</color>
+
+    <color name="primary">#3db671</color>
+
+    <color name="white">#ffffff</color>
+    <color name="bg_gradient_start">#31244e</color>
+    <color name="bg_gradient_end">#6b394c</color>
+    <color name="colorPrimary1">#5aa184</color>
+    <color name="colorPrimaryDark1">#487b66</color>
+    <color name="colorAccent1">#2b644c</color>
+
+    <color name="colorButton">#3d5f51</color>
+    <color name="colorButtonActive">#1bea95</color>
+</resources>
